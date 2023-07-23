@@ -47,6 +47,8 @@ const options = {
     function onTimer() {
       const intervalID = setInterval(() => {
         dataTimer -= 1000;
+        btnStart.setAttribute('disabled', 'true');
+        inputEl.setAttribute('disabled', 'true');
 
         daysEl.textContent = addLeadingZero(String(convertMs(dataTimer).days));
         hoursEl.textContent = addLeadingZero(
@@ -60,6 +62,8 @@ const options = {
         );
         if (dataTimer <= 1000) {
           clearInterval(intervalID);
+          btnStart.removeAttribute('disabled', 'true');
+          inputEl.removeAttribute('disabled', 'true');
         }
       }, 1000);
     }
@@ -71,5 +75,3 @@ function addLeadingZero(value) {
 }
 
 const fp = flatpickr(inputEl, options);
-
-console.log(123);
