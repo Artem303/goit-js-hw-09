@@ -17,6 +17,7 @@ function onStartChangeColor() {
   }, 1000);
   btnStart.setAttribute('disabled', 'true');
   btnStop.removeAttribute('disabled');
+  return;
 }
 
 btnStop.addEventListener('click', onStopChange);
