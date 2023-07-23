@@ -15,7 +15,7 @@ function onStartChangeColor() {
   btnStart.setAttribute('disabled', 'true');
   btnStop.removeAttribute('disabled');
 
-  timerId = setInterval(() => {
+  const timerId = setInterval(() => {
     bodyElement.style.backgroundColor = getRandomHexColor();
   }, 1000);
 
@@ -25,6 +25,7 @@ function onStartChangeColor() {
     clearInterval(timerId);
     btnStart.removeAttribute('disabled');
     btnStop.setAttribute('disabled', 'true');
-    console.log(123);
+
+    btnStop.removeEventListener('click', onStopChange);
   }
 }
