@@ -71,3 +71,5 @@ function addLeadingZero(value) {
 }
 
 const fp = flatpickr(inputEl, options);
+
+console.log(123);

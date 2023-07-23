@@ -15,15 +15,16 @@ function onStartChangeColor() {
   btnStart.setAttribute('disabled', 'true');
   btnStop.removeAttribute('disabled');
 
-  return (timerId = setInterval(() => {
+  timerId = setInterval(() => {
     bodyElement.style.backgroundColor = getRandomHexColor();
-  }, 1000));
-}
+  }, 1000);
 
-btnStop.addEventListener('click', onStopChange);
+  btnStop.addEventListener('click', onStopChange);
 
-function onStopChange() {
-  clearInterval(timerId);
-  btnStart.removeAttribute('disabled');
-  btnStop.setAttribute('disabled', 'true');
+  function onStopChange() {
+    clearInterval(timerId);
+    btnStart.removeAttribute('disabled');
+    btnStop.setAttribute('disabled', 'true');
+    console.log(123);
+  }
 }
