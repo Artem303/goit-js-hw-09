@@ -12,12 +12,12 @@ function getRandomHexColor() {
 }
 
 function onStartChangeColor() {
-  timerId = setInterval(() => {
-    bodyElement.style.backgroundColor = getRandomHexColor();
-  }, 1000);
   btnStart.setAttribute('disabled', 'true');
   btnStop.removeAttribute('disabled');
-  return;
+
+  return (timerId = setInterval(() => {
+    bodyElement.style.backgroundColor = getRandomHexColor();
+  }, 1000));
 }
 
 btnStop.addEventListener('click', onStopChange);
